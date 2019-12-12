@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  generate-raw-addresses:
+    image: techbureau/catapult-tools:gcc-keccak-0.9.1.1
+    command: bash -c "/bin-mount/generate-raw-addresses-if-needed 2 /addresses/raw-addresses.txt /addresses/addresses.yaml"
+    volumes:
+    - ./utilities/bin/bash:/bin-mount
+    - ./build/generated-addresses:/addresses:rw
+
+  store-addresses:
+    build: utilities/dockerfiles/ruby-alpine
+    command: ash -c "/bin-mount/wait /addresses/raw-addresses.txt && /ruby/bin/store-addresses-if-needed.rb /addresses/raw-addresses.txt /addresses/addresses.yaml"
+    volumes:
+    - ./utilities/bin/ash:/bin-mount
+    - ./utilities/ruby:/ruby
+    - ./build/generated-addresses:/addresses:rw
+
+  update_vars:
+    build: utilities/dockerfiles/ruby-alpine
+#    command: ash -c "sleep 100000"
+    command: ash -c "/bin-mount/wait /addresses/addresses.yaml && /usr/share/base/ruby/bin/update_vars.rb && touch /state/update_vars"
+    volumes:
+    - ./utilities/bin/ash:/bin-mount
+    - ./utilities/ruby:/usr/share/base/ruby
+    - ./runtime-vars:/usr/share/base/ruby/config
+    - ./peer-node:/usr/share/base/peer-node
+    - ./build/generated-addresses:/addresses:rw
+    - ./state:/state:rw
+
+  ###### running services ###########
+
+  peer-node:
+    build: peer-node/dockerfiles/catapult
+    ports:
+    - 7900:7900
+#    command: bash -c "sleep 1000000"
+    command: bash -c "/bin-mount/wait /state/update_vars && /bin/bash /userconfig/startServer.sh"
+    stop_signal: SIGINT
+    volumes:
+    - ./utilities/bin/bash:/bin-mount
+    - ./peer-node/configs/resources:/userconfig/resources/
+    - ./data:/data:rw
+    - ./state:/state:rw

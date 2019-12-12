@@ -1,0 +1,34 @@
+run_time_vars:
+- name: BOOT_PRIVATE_KEY
+  source:
+    path: peer-node/config-input.yaml
+    key: boot_private_key
+    address_position: 0 
+    key_type: private
+  targets:
+  - peer-node/configs/resources/config-user.properties
+- name: PUBLIC_KEY
+  source:
+    path: peer-node/config-input.yaml
+    key: public_key
+    address_position: 0 
+    key_type: public
+  targets: []
+- name: HARVESTER_PRIVATE_KEY
+  source:
+    path: peer-node/config-input.yaml
+    key: harvester_private_key
+    # using same key as use for BOOT_PRIVATE_KEY
+    address_position: 0 
+    key_type: private
+  targets:
+  - peer-node/configs/resources/config-harvesting.properties
+- name: FRIENDLY_NAME
+  source:
+    type: friendly_name
+    path: peer-node/config-input.yaml
+    key: friendly_name
+    address_position: 0 
+    key_type: public
+  targets:
+  - peer-node/configs/resources/config-node.properties

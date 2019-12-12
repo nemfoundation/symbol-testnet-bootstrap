@@ -1,3 +1,9 @@
+api-harvest-assembly/data/api-node/*
+api-harvest-assembly/build/*
+api-harvest-assembly/state/*
+peer-assembly/data/*
+peer-assembly/build/*
+peer-assembly/state/*
 *.bak
 *.tmp
 

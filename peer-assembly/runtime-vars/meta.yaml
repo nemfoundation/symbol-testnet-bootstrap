@@ -6,7 +6,7 @@ run_time_vars:
     address_position: 0 
     key_type: private
   targets:
-  - peer-node/configs/resources/config-user.properties
+  - peer-node/userconfig/resources/config-user.properties
 - name: PUBLIC_KEY
   source:
     path: peer-node/config-input.yaml
@@ -22,7 +22,7 @@ run_time_vars:
     address_position: 0 
     key_type: private
   targets:
-  - peer-node/configs/resources/config-harvesting.properties
+  - peer-node/userconfig/resources/config-harvesting.properties
 - name: FRIENDLY_NAME
   source:
     type: friendly_name
@@ -31,4 +31,4 @@ run_time_vars:
     address_position: 0 
     key_type: public
   targets:
-  - peer-node/configs/resources/config-node.properties
+  - peer-node/userconfig/resources/config-node.properties

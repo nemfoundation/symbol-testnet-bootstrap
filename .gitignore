@@ -11,6 +11,7 @@ peer-assembly/data/*
 peer-assembly/build/*
 peer-assembly/state/*
 peer-assembly/state/*
+peer-assembly/peer-node/config-input.yaml
 peer-assembly/peer-node/userconfig/resources/config-harvesting.properties
 peer-assembly/peer-node/userconfig/resources/config-node.properties
 peer-assembly/peer-node/userconfig/resources/config-user.properties

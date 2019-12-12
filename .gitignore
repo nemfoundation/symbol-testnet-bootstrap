@@ -1,9 +1,19 @@
 api-harvest-assembly/data/api-node/*
+api-harvest-assembly/data/mongo/*
+api-harvest-assembly/data/api-node/00000/hashes.dat
 api-harvest-assembly/build/*
 api-harvest-assembly/state/*
+api-harvest-assembly/api-node/userconfig/resources/config-harvesting.properties
+api-harvest-assembly/api-node/userconfig/resources/config-node.properties
+api-harvest-assembly/api-node/userconfig/resources/config-user.properties
+api-harvest-assembly/rest-gateway/userconfig/rest.json
 peer-assembly/data/*
 peer-assembly/build/*
 peer-assembly/state/*
+peer-assembly/state/*
+peer-assembly/peer-node/userconfig/resources/config-harvesting.properties
+peer-assembly/peer-node/userconfig/resources/config-node.properties
+peer-assembly/peer-node/userconfig/resources/config-user.properties
 *.bak
 *.tmp
 

@@ -49,6 +49,7 @@ Feel free to start an issue or create a pull request. Check [CONTRIBUTING](CONTR
 ## Getting help
 
 - [catapult-testnet-bootstrap documentation][docs]
+- Join the community [slack group (#sig-testing)][slack] 
 - If you found a bug, please [open a new issue][issues]
 
 ## License
@@ -60,3 +61,4 @@ Licensed under the [Apache License 2.0](LICENSE)
 [self]: https://github.com/nemfoundation/catapult-testnet-bootstrap
 [docs]: http://nemtech.github.io/guides/network/running-a-test-net-node.html
 [issues]: https://github.com/nemfoundation/catapult-testnet-bootstrap/issues
+[slack]: https://join.slack.com/t/nem2/shared_invite/enQtMzY4MDc2NTg0ODgyLWZmZWRiMjViYTVhZjEzOTA0MzUyMTA1NTA5OWQ0MWUzNTA4NjM5OTJhOGViOTBhNjkxYWVhMWRiZDRkOTE0YmU

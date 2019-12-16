@@ -19,7 +19,7 @@ The setup scripts are automated using docker. To run a test net node, you will n
 
 ```cd api-harvest-assembly```
 
-Or
+or...
 
 ```cd peer-assembly```
 

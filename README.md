@@ -13,21 +13,29 @@ The setup scripts are automated using docker. To run a test net node, you will n
 
 1. Download the [latest release](https://github.com/nemfoundation/catapult-testnet-bootstrap) of the package, or clone the repository directly using Git.
 
-```git clone https://github.com/nemfoundation/catapult-testnet-bootstrap.git```
+```
+git clone https://github.com/nemfoundation/catapult-testnet-bootstrap.git
+```
 
 2. Choose the assembly distribution to install.
 
-```cd api-harvest-assembly```
+```
+cd api-harvest-assembly
+```
 
 or...
 
-```cd peer-assembly```
+```
+cd peer-assembly
+```
 
 To choose between one distribution or another, read the [technical reference](https://nemtech.github.io/guides/network/running-a-test-net-node.html#installation).         
 
 3. Run the node with docker-compose.
 
-```sudo docker-compose up --build --detach```
+```
+sudo docker-compose up --build --detach
+```
 
 You should see docker downloading the container images for the first time, then it should run the setup and finally startup the service.
 

@@ -80,8 +80,7 @@ services:
     - db
 
   rest-gateway:
-  #    image: techbureau/catapult-rest-server:latest
-    image: nemfoundation/catapult-rest-f2-edge
+    image: nemfoundation/catapult-rest-f2-edge:commit-02aeeeb
     command: ash -c "/bin-mount/wait /state/update_vars && npm start resources/rest.json /userconfig/rest.json"
     stop_signal: SIGINT
     ports:

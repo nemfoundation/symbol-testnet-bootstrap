@@ -8,12 +8,12 @@ Automated setup to deploy and manage Symbol testnet nodes.
 
 ## Environment requirements
 
-:information_source: Currently the release images target more recent x86 architectures.  It has been reported that on some older machines provided by hosting providers errors are experienced.  We will be working to create builds that work on a wider range of older machines and update when available.  If you run into any related issues feel freel to report in the [slack group (#help)][slack].
-
 The setup scripts are automated using docker. To run a test net node, you will need to have installed the following docker tools:
 
 * [docker](https://docs.docker.com/install/#server)
 * [docker-compose](https://docs.docker.com/compose/install/#install-compose)
+
+:information_source: The release images target modern x86 architectures. It has been reported that errors are experienced on some older machines provided. If you run into any related issues, please report in the [slack group (#help)][slack].
 
 ## Installation
 
@@ -35,7 +35,9 @@ or...
 cd symbol-testnet-bootstrap/peer-assembly
 ```
 
-To choose between one distribution or another, read the [technical reference](https://nemtech.github.io/guides/network/running-a-test-net-node.html#installation).         
+In short, if you want to be able to interact with your node, you need to run the API assembly.
+On the other hand, if you want a node dedicated exclusively confirm transactions, deploy the peer assembly.
+You can read more about each assembly [here](node).
 
 3. Run the node with docker-compose.
 
@@ -43,22 +45,23 @@ To choose between one distribution or another, read the [technical reference](ht
 sudo docker-compose up --build --detach
 ```
 
-You should see docker downloading the container images for the first time, then it should run the setup and finally startup the service.
+You should see docker downloading the container images for the first time. Then it should run the setup and finally startup the service.
+
+To stop all the running services, run ``sudo docker-compose down`` in the same directory you executed the ``up`` command.
 
 ## Peer Assembly 
 
-The peer assembly will set up a peer only node 
+The Peer assembly will set up a [Peer](https://nemtech.github.io/concepts/node.html#peer-node) only node.
 
 ## API Harvest Assembly 
 
-The api harvest assembly will set up a dual purpose api and peer node, as well as the api gateway that transactions can be submitted to and data read from. 
+The API harvest assembly will set up a Dual purpose [API](https://nemtech.github.io/concepts/node.html#api-node) and [Peer](https://nemtech.github.io/concepts/node.html#peer-node) node, as well as the [REST gateway](https://nemtech.github.io/concepts/node.html#rest-gateway) that transactions can be submitted to and data read from.
 
 You can verify that the node is running by opening a new browser tab with the following URL: ``localhost:3000/chain/height``.
 
-:warning: If you are running an api node it will expose port 3000 by default on the machine you are running on.  If you cannot access it might mean that the port is closed by default by your machine and/or hosting provider so you will have to open in order to access from outside the machine 
+:information_source: The software should expose the port ``3000`` by default. If you cannot access the REST Gateway from outside, it might mean that the port is closed by default by your machine or hosting provider so you will have to open it in order to access from outside the machine.
 
-:information_source: API nodes take up more memory and storage than peer nodes b/c its keeps a an accessible copy of the data in memory for requests asking to read details, such as how the block explorer works.  If you have memory or storage contraints and are running into issues it is recommended you switch to running a peer only node instead.
-
+:information_source: API nodes take up more memory and storage than peer nodes. If you have memory or storage constraints and you are running into issues, it is recommended you switch to running a Peer only node instead.
 
 ## Contributing
 
@@ -79,5 +82,6 @@ Licensed under the [Apache License 2.0](LICENSE)
 
 [self]: https://github.com/nemfoundation/symbol-testnet-bootstrap
 [docs]: http://nemtech.github.io/guides/network/running-a-test-net-node.html
+[node]: https://nemtech.github.io/concepts/node.html
 [issues]: https://github.com/nemfoundation/symbol-testnet-bootstrap/issues
 [slack]: https://join.slack.com/t/nem2/shared_invite/enQtMzY4MDc2NTg0ODgyLWZmZWRiMjViYTVhZjEzOTA0MzUyMTA1NTA5OWQ0MWUzNTA4NjM5OTJhOGViOTBhNjkxYWVhMWRiZDRkOTE0YmU

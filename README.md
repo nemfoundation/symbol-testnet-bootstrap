@@ -61,7 +61,7 @@ You can verify that the node is running by opening a new browser tab with the fo
 
 :information_source: The software should expose the port ``3000`` by default. If you cannot access the REST Gateway from outside, it might mean that the port is closed by default by your machine or hosting provider so you will have to open it in order to access from outside the machine.
 
-:information_source: API nodes take up more memory and storage than peer nodes. If you have memory or storage constraints and you are running into issues, it is recommended you switch to running a Peer only node instead.
+:information_source: API nodes take up more memory and storage than Peer nodes. If you have memory or storage constraints and you are running into issues, it is recommended you switch to running a Peer only node instead.
 
 ## Contributing
 

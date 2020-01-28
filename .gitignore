@@ -7,6 +7,8 @@ api-harvest-assembly/api-node/userconfig/resources/config-harvesting.properties
 api-harvest-assembly/api-node/userconfig/resources/config-node.properties
 api-harvest-assembly/api-node/userconfig/resources/config-user.properties
 api-harvest-assembly/rest-gateway/userconfig/rest.json
+api-harvest-assembly/api-node/config-input.yaml
+api-harvest-assembly/rest-gateway/config-input.yaml
 peer-assembly/data/*
 peer-assembly/build/*
 peer-assembly/state/*

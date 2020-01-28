@@ -6,6 +6,9 @@ Automated setup to deploy and manage Symbol testnet nodes.
 
 :information_source: Over time as you upgrade to new versions old versions can take up space on disk.  If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`.  NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
 
+:warning: If seeing hash errors or seeing sync problems from previous versions make sure to pull the latest updates and try again, if issues persist please request help on #help on the community slack. To pull the latest from the base directory you can run `git pull origin master`
+
+
 ## Environment requirements
 
 The setup scripts are automated using docker. To run a test net node, you will need to have installed the following docker tools:

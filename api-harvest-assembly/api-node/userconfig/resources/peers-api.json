@@ -1,5 +1,38 @@
 {
   "_info": "this file contains a list of api_node peers",
   "knownPeers": [
+    {
+      "publicKey": "B3E0DA69C4B05D83095329BE6AFE63C390947E42F46C9E88C68366A11CC7744F",
+      "endpoint": {
+        "host": "api-xym-3-01.ap-northeast-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-xym-3-01-ap-northeast-1",
+        "roles": "Api"
+      }
+    },
+    {
+      "publicKey": "EED6DC460C8F221D734C4042BE954AE4462CFC69C9867445F372129871027348",
+      "endpoint": {
+        "host": "api-xym-3-01.ap-southeast-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-xym-3-01-ap-southeast-1",
+        "roles": "Api"
+      }
+    },
+    {
+      "publicKey": "73FAE8B25A86225CF07C35D311F00AEDAE97BF86E5B8ED9E178AA06D6EC3E4AE",
+      "endpoint": {
+        "host": "api-xym-harvest-3-01.us-west-2.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-xym-harvest-3-01-us-west-2",
+        "roles": "Peer,Api"
+      }
+    }
   ]
 }

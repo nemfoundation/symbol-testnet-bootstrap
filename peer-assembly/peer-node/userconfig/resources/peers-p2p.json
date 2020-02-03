@@ -2,69 +2,47 @@
   "_info": "this file contains a list of peer_node peers",
   "knownPeers": [
     {
-      "publicKey": "4CEC0D3F1651D866876B57685D75F0864667802B904C619A2D3F7C7A01BD3B71",
+      "publicKey": "8830AE4B12856EF0FA185383EA59A2EC9FF5E71A5373BAF1133DBCC218C57FDB",
       "endpoint": {
-        "host": "beacon-xym-01.us-west-1.nemtech.network",
+        "host": "beacon-xym-3-01.us-west-1.nemtech.network",
         "port": 7900
       },
       "metadata": {
-        "name": "beacon-xym-01-us-west-1",
+        "name": "beacon-xym-3-01-us-west-1",
         "roles": "Peer"
       }
     },
     {
-      "publicKey": "CA71D1F09D138BB80D3459DC83842BCABB18B7C189802C86C4322614756EFD69",
+      "publicKey": "9B7A9EC47943AAB7DB8A09F26F2612BDAECCE9F4C94BC1CD65BBF212778AAD83",
       "endpoint": {
-        "host": "beacon-xym-012.us-east-1.nemtech.network",
+        "host": "beacon-xym-3-01.eu-west-1.nemtech.network",
         "port": 7900
       },
       "metadata": {
-        "name": "beacon-xym-012-us-east-1",
+        "name": "beacon-xym-3-01-eu-west-1",
         "roles": "Peer"
       }
     },
     {
-      "publicKey": "04D540566C441218E7E24A756B68BC4F6BE68FC28528E0F4E19AC71A1F579AA3",
+      "publicKey": "7FD1F433E417FBB39D2DB6BAAAD43BC2D4F51FA42AAFE9AB51638A1A106298AD",
       "endpoint": {
-        "host": "beacon-xym-01.eu-west-1.nemtech.network",
+        "host": "beacon-xym-3-01.ap-northeast-1.nemtech.network",
         "port": 7900
       },
       "metadata": {
-        "name": "beacon-xym-01-eu-west-1",
+        "name": "beacon-xym-3-01-ap-northeast-1",
         "roles": "Peer"
       }
     },
     {
-      "publicKey": "5693E31B4481AF06199DFD65C099FE42B5558572627A26FCF0BD7CC13ADFF0B0",
+      "publicKey": "6782BCA81B7D50439E07286ECC83152F95A57786CBEDC501E71EFC2EA83BE883",
       "endpoint": {
-        "host": "api-xym-harvest-20.ap-northeast-1.nemtech.network",
+        "host": "beacon-xym-3-01.ap-southeast-1.nemtech.network",
         "port": 7900
       },
       "metadata": {
-        "name": "api-xym-harvest-20-ap-northeast-1",
-        "roles": "Peer,Api"
-      }
-    },
-    {
-      "publicKey": "0D9069227936B3FEED9909CDF7B8EE2290955BAB71DAA4010A486B9523AEFFE6",
-      "endpoint": {
-        "host": "api-xym-harvest-20.ap-southeast-1.nemtech.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-xym-harvest-20-ap-southeast-1",
-        "roles": "Peer,Api"
-      }
-    },
-    {
-      "publicKey": "9010770B28A0972AFF672A32E5B898609CE88A5FEB06D17D0B96EC5B3D88066F",
-      "endpoint": {
-        "host": "api-xym-harvest-20.eu-west-1.nemtech.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-xym-harvest-20-eu-west-1",
-        "roles": "Peer,Api"
+        "name": "beacon-xym-3-01-ap-southeast-1",
+        "roles": "Peer"
       }
     }
   ]

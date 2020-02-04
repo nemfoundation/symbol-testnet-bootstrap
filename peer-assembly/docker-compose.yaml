@@ -42,3 +42,4 @@ services:
     - ./peer-node/userconfig/resources:/userconfig/resources/
     - ./data:/data:rw
     - ./state:/state:rw
+    - ./data/debug:/usr/share/apport/apport:rw

@@ -47,6 +47,7 @@ services:
     - ./api-node/userconfig:/userconfig/
     - ./data/api-node:/data:rw
     - ./state:/state:rw
+    - ./data/debug:/usr/share/apport/apport:rw
 
   api-broker:
     image: techbureau/catapult-server:gcc-keccak-0.9.2.1
@@ -60,6 +61,7 @@ services:
     - ./api-node/userconfig:/userconfig/
     - ./data/api-node:/data:rw
     - ./state:/state:rw
+    - ./data/debug:/usr/share/apport/apport:rw
 
   db:
     image: mongo

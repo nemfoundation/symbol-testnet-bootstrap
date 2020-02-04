@@ -89,6 +89,7 @@ services:
     - ./rest-gateway/userconfig/:/userconfig/
     - ./utilities/bin/ash:/bin-mount
     - ./state:/state:rw
+    - ./data/rest-gateway:/logs:rw
     depends_on:
     - init-db
     networks:

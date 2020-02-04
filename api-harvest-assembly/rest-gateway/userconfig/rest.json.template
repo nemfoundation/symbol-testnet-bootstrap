@@ -63,7 +63,7 @@
       "level": "verbose",
       "handleExceptions": true,
 
-      "filename": "catapult-rest.log",
+      "filename": "/logs/catapult-rest.log",
       "maxsize": 20971520,
       "maxFiles": 100
     }

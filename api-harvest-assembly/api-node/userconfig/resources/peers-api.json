@@ -24,6 +24,17 @@
       }
     },
     {
+      "publicKey": "B719697D23BFBB00A61F007BC804EFE55000B444EF32FF6BBA895A2FE7DDBD7C",
+      "endpoint": {
+        "host": "api-xym-3-01.us-west-2.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-xym-3-01-us-west-2",
+        "roles": "Api"
+      }
+    },
+    {
       "publicKey": "73FAE8B25A86225CF07C35D311F00AEDAE97BF86E5B8ED9E178AA06D6EC3E4AE",
       "endpoint": {
         "host": "api-xym-harvest-3-01.us-west-2.nemtech.network",

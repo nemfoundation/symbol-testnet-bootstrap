@@ -1,4 +1,6 @@
 api-harvest-assembly/data/api-node/*
+api-harvest-assembly/data/rest-gateway/*
+api-harvest-assembly/data/debug/*
 api-harvest-assembly/data/mongo/*
 api-harvest-assembly/data/api-node/00000/hashes.dat
 api-harvest-assembly/build/*

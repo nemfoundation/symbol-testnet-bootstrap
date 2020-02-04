@@ -2,11 +2,31 @@
 
 Automated setup to deploy and manage Symbol testnet nodes.
 
-:warning: This is for the newer Symbol test network deployments (ie: will use symbol.xym as the network currency mosaic). If you have previously been running a node on the older test networks using nem.xem (pre 0.9.2.1) you will be redeploying your node and syncing with a different network. Any account(s) you might have been using on the old network will have no balance if moving to a new network.
+:warning: This is for the newer version 2 of the Symbol test network deployments (ie: will use symbol.xym as the network currency mosaic). If you have been running a node on ANY previous version it is best if you start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
 
-:information_source: Over time as you upgrade to new versions old versions can take up space on disk.  If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`.  NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
+:warning: To clean up your environment if moving from a previous test network setup you can follow these steps
 
-:warning: If seeing hash errors or seeing sync problems from previous versions make sure to pull the latest updates and try again, if issues persist please request help on #help on the community slack. To pull the latest from the base directory you can run `git pull origin master`
+If you were running a peer node:
+
+```
+1) change to peer-assembly directory
+2) Stop running services (run command "docker-compose down")
+3) Change to outside the testnet bootstrap tool directory
+3) Delete directory  symbol-testnet-bootstrap/  OR catapult-testnet-bootstrap/  (if coming from the older generation) 
+4) Delete your image cache by running "docker system prune -a"  (confirm "y" if prompted)
+```
+
+If you were running an api node:
+
+```
+1) change to api-harvest-assembly directory
+2) Stop running services (run command "docker-compose down")
+3) Change to outside the testnet bootstrap tool directory
+3) Delete directory  symbol-testnet-bootstrap/  OR catapult-testnet-bootstrap/  (if coming from the older generation) 
+4) Delete your image cache by running "docker system prune -a"  (confirm "y" if prompted)
+```
+
+:information_source: Over time as you upgrade to new versions old versions can take up space on disk. If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`. NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
 
 
 ## Environment requirements
@@ -55,6 +75,8 @@ To stop all the running services, run ``sudo docker-compose down`` in the same d
 ## Peer Assembly 
 
 The Peer assembly will set up a [Peer](https://nemtech.github.io/concepts/node.html#peer-node) only node.
+
+:information_source: The server needs to have port 7900 open and available to connect to else it will not be able to connect with other nodes in the network.
 
 ## API Harvest Assembly 
 

@@ -8,7 +8,7 @@ networks:
 services:
   generate-raw-addresses:
     image: techbureau/catapult-tools:gcc-keccak-0.9.2.1
-    command: bash -c "/bin-mount/generate-raw-addresses-if-needed 3 /addresses/raw-addresses.txt /addresses/addresses.yaml"
+    command: bash -c "/bin-mount/generate-raw-addresses-if-needed 2 /addresses/raw-addresses.txt /addresses/addresses.yaml"
     volumes:
     - ./utilities/bin/bash:/bin-mount
     - ./build/generated-addresses:/addresses:rw
@@ -92,9 +92,9 @@ services:
     - ./utilities/bin/ash:/bin-mount
     - ./state:/state:rw
     - ./data/rest-gateway:/logs:rw
+
     depends_on:
     - init-db
     networks:
       default:
         ipv4_address: 172.20.0.9
-

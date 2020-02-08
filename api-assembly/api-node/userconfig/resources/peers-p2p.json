@@ -1,0 +1,49 @@
+{
+  "_info": "this file contains a list of peer_node peers",
+  "knownPeers": [
+    {
+      "publicKey": "8830AE4B12856EF0FA185383EA59A2EC9FF5E71A5373BAF1133DBCC218C57FDB",
+      "endpoint": {
+        "host": "beacon-xym-3-01.us-west-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-xym-3-01-us-west-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "9B7A9EC47943AAB7DB8A09F26F2612BDAECCE9F4C94BC1CD65BBF212778AAD83",
+      "endpoint": {
+        "host": "beacon-xym-3-01.eu-west-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-xym-3-01-eu-west-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "7FD1F433E417FBB39D2DB6BAAAD43BC2D4F51FA42AAFE9AB51638A1A106298AD",
+      "endpoint": {
+        "host": "beacon-xym-3-01.ap-northeast-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-xym-3-01-ap-northeast-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "6782BCA81B7D50439E07286ECC83152F95A57786CBEDC501E71EFC2EA83BE883",
+      "endpoint": {
+        "host": "beacon-xym-3-01.ap-southeast-1.nemtech.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-xym-3-01-ap-southeast-1",
+        "roles": "Peer"
+      }
+    }
+  ]
+}

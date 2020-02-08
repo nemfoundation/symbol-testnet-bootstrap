@@ -55,6 +55,13 @@ cd symbol-testnet-bootstrap/api-harvest-assembly
 or...
 
 ```
+cd symbol-testnet-bootstrap/api-assembly
+```
+
+or...
+
+
+```
 cd symbol-testnet-bootstrap/peer-assembly
 ```
 
@@ -78,6 +85,7 @@ The Peer assembly will set up a [Peer](https://nemtech.github.io/concepts/node.h
 
 :information_source: The server needs to have port 7900 open and available to connect to else it will not be able to connect with other nodes in the network.
 
+
 ## API Harvest Assembly 
 
 The API harvest assembly will set up a Dual purpose [API](https://nemtech.github.io/concepts/node.html#api-node) and [Peer](https://nemtech.github.io/concepts/node.html#peer-node) node, as well as the [REST gateway](https://nemtech.github.io/concepts/node.html#rest-gateway) that transactions can be submitted to and data read from.
@@ -87,6 +95,11 @@ You can verify that the node is running by opening a new browser tab with the fo
 :information_source: The software should expose the port ``3000`` by default. If you cannot access the REST Gateway from outside, it might mean that the port is closed by default by your machine or hosting provider so you will have to open it in order to access from outside the machine.
 
 :information_source: API nodes take up more memory and storage than Peer nodes. If you have memory or storage constraints and you are running into issues, it is recommended you switch to running a Peer only node instead.
+
+## API Assembly
+
+New as of beta4. The API assembly will set up an api node that just serves as a gateway for transaction submissions and information requests from the network.
+
 
 ## Contributing
 

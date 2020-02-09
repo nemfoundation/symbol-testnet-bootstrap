@@ -16,6 +16,8 @@ api-assembly/data/debug/*
 api-assembly/data/mongo/*
 api-assembly/build/*
 api-assembly/state/*
+api-assembly/data/api-node/*
+api-assembly/data/api-node/00000/hashes.dat
 api-assembly/api-node/userconfig/resources/config-harvesting.properties
 api-assembly/api-node/userconfig/resources/config-node.properties
 api-assembly/api-node/userconfig/resources/config-user.properties

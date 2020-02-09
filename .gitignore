@@ -11,11 +11,9 @@ api-harvest-assembly/api-node/userconfig/resources/config-user.properties
 api-harvest-assembly/rest-gateway/userconfig/rest.json
 api-harvest-assembly/api-node/config-input.yaml
 api-harvest-assembly/rest-gateway/config-input.yaml
-api-assembly/data/api-node/*
 api-assembly/data/rest-gateway/*
 api-assembly/data/debug/*
 api-assembly/data/mongo/*
-api-assembly/data/api-node/00000/hashes.dat
 api-assembly/build/*
 api-assembly/state/*
 api-assembly/api-node/userconfig/resources/config-harvesting.properties

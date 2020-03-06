@@ -24,17 +24,6 @@
       }
     },
     {
-      "publicKey": "3064540BF481D530F00545F7C56020189EC84789E7F8E073F6799406E1553069",
-      "endpoint": {
-        "host": "beacon-01.ap-northeast-1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "beacon-01-ap-northeast-1",
-        "roles": "Peer"
-      }
-    },
-    {
       "publicKey": "F483D382AD8E3DAF35E07216ED6BD2B889EDD75659DCF919D6FB6BB4FB42E604",
       "endpoint": {
         "host": "beacon-01.ap-southeast-1.symboldev.network",
@@ -53,6 +42,61 @@
       },
       "metadata": {
         "name": "beacon-01-eu-central-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "FFCBF7D87B614EB3A350BE0B60FF5BE8649B884B0262B76CAFD94AE730C1ACA4",
+      "endpoint": {
+        "host": "beacon-02.ap-northeast-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-02-ap-northeast-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "8FA23B6A192F81459554B8D62C848C998E54D4D32CDE43A1B292A7E467E80FD0",
+      "endpoint": {
+        "host": "beacon-02.ap-southeast-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-02-ap-southeast-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "6F41E436F3AC206C2D0E3BA6BF536B26AD555CF35ACAF0374C71E81119825437",
+      "endpoint": {
+        "host": "beacon-02.eu-central-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-02-eu-central-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "1C87D12130893993739B3AA0BC4FE36815E7E151C0E4F470C0F6D340EC264D20",
+      "endpoint": {
+        "host": "beacon-02.eu-west-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-02-eu-west-1",
+        "roles": "Peer"
+      }
+    },
+    {
+      "publicKey": "F2EBF3EF755B98FC0756630BFBA85B353FA19E13C26D27EEC4AB8B7796385BBF",
+      "endpoint": {
+        "host": "beacon-02.us-west-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "beacon-02-us-west-1",
         "roles": "Peer"
       }
     }

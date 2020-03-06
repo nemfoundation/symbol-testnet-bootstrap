@@ -2,46 +2,90 @@
   "_info": "this file contains a list of api_node peers",
   "knownPeers": [
     {
-      "publicKey": "B3E0DA69C4B05D83095329BE6AFE63C390947E42F46C9E88C68366A11CC7744F",
+      "publicKey": "632650C13CC8B4B2D760445C4EB17B068EE1D81910E77953994B24C4CD73C26E",
       "endpoint": {
-        "host": "api-xym-3-01.ap-northeast-1.nemtech.network",
+        "host": "api-01.eu-west-1.symboldev.network",
         "port": 7900
       },
       "metadata": {
-        "name": "api-xym-3-01-ap-northeast-1",
+        "name": "api-01-eu-west-1",
         "roles": "Api"
       }
     },
     {
-      "publicKey": "EED6DC460C8F221D734C4042BE954AE4462CFC69C9867445F372129871027348",
+      "publicKey": "75699EBDB3D9D7DF1CC8A7FBD924D03DFF5CEB1EC1AC9B5756EDE5A3D4DA23A9",
       "endpoint": {
-        "host": "api-xym-3-01.ap-southeast-1.nemtech.network",
+        "host": "api-01.us-west-1.symboldev.network",
         "port": 7900
       },
       "metadata": {
-        "name": "api-xym-3-01-ap-southeast-1",
+        "name": "api-01-us-west-1",
         "roles": "Api"
       }
     },
     {
-      "publicKey": "B719697D23BFBB00A61F007BC804EFE55000B444EF32FF6BBA895A2FE7DDBD7C",
+      "publicKey": "FBFB03489FBDD00E39D44ED5AEE6A796DE9EC6D6F5E5CC8A5EE94F59DEED9F12",
       "endpoint": {
-        "host": "api-xym-3-01.us-west-2.nemtech.network",
+        "host": "api-01.ap-northeast-1.symboldev.network",
         "port": 7900
       },
       "metadata": {
-        "name": "api-xym-3-01-us-west-2",
+        "name": "api-01-ap-northeast-1",
         "roles": "Api"
       }
     },
     {
-      "publicKey": "73FAE8B25A86225CF07C35D311F00AEDAE97BF86E5B8ED9E178AA06D6EC3E4AE",
+      "publicKey": "4E8B343B58E1B65D2E8EE436F87FEBCDD27F518363CD01847D5445C64544D068",
       "endpoint": {
-        "host": "api-xym-harvest-3-01.us-west-2.nemtech.network",
+        "host": "api-harvest-01.ap-northeast-1.symboldev.network",
         "port": 7900
       },
       "metadata": {
-        "name": "api-xym-harvest-3-01-us-west-2",
+        "name": "api-harvest-01-ap-northeast-1",
+        "roles": "Peer,Api"
+      }
+    },
+    {
+      "publicKey": "A35A8A9C15DEBDE47E8DE097E886FD9E1F850A4045E991C59FAACD7D3A2EAFF9",
+      "endpoint": {
+        "host": "api-01.ap-southeast-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-01-ap-southeast-1",
+        "roles": "Api"
+      }
+    },
+    {
+      "publicKey": "680C2A91FC1E92657B29E2D29AE6CBA552CD88E8598D1F8446727312A5D43BE0",
+      "endpoint": {
+        "host": "api-harvest-01.ap-southeast-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-harvest-01-ap-southeast-1",
+        "roles": "Peer,Api"
+      }
+    },
+    {
+      "publicKey": "FDF867BBF1049D2EA3066F0CD1CBC8A2C10DBD868D7D2BD1F4FFF12876B33C73",
+      "endpoint": {
+        "host": "api-01.eu-central-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-01-eu-central-1",
+        "roles": "Api"
+      }
+    },
+    {
+      "publicKey": "DD33DBCE785D9163FD5DF5744B38E28E0FACEB5C532C190B494B9DD0668B6B9A",
+      "endpoint": {
+        "host": "api-harvest-01.eu-central-1.symboldev.network",
+        "port": 7900
+      },
+      "metadata": {
+        "name": "api-harvest-01-eu-central-1",
         "roles": "Peer,Api"
       }
     }

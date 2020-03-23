@@ -2,7 +2,7 @@ version: '3'
 
 services:
   generate-raw-addresses:
-    image: techbureau/catapult-tools:gcc-0.9.3.1
+    image: techbureau/catapult-tools:gcc-0.9.3.2
     command: bash -c "/bin-mount/generate-raw-addresses-if-needed 2 /addresses/raw-addresses.txt /addresses/addresses.yaml"
     volumes:
     - ./utilities/bin/bash:/bin-mount

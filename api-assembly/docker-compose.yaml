@@ -7,7 +7,7 @@ networks:
         - subnet: 172.20.0.0/24
 services:
   generate-raw-addresses:
-    image: techbureau/catapult-tools:gcc-0.9.3.1
+    image: techbureau/catapult-tools:gcc-0.9.3.2
     command: bash -c "/bin-mount/generate-raw-addresses-if-needed 2 /addresses/raw-addresses.txt /addresses/addresses.yaml"
     volumes:
     - ./utilities/bin/bash:/bin-mount
@@ -36,7 +36,7 @@ services:
 
   ###### running services ###########
   api-node:
-    image: techbureau/catapult-server:gcc-0.9.3.1
+    image: techbureau/catapult-server:gcc-0.9.3.2
     ports:
     - 7900:7900
 #    command: bash -c "sleep 1000000"
@@ -50,7 +50,7 @@ services:
     - ./data/debug:/usr/share/apport/apport:rw
 
   api-broker:
-    image: techbureau/catapult-server:gcc-0.9.3.1
+    image: techbureau/catapult-server:gcc-0.9.3.2
 #    command: bash -c "sleep 1000000"
     command: bash -c "/bin-mount/wait /state/update_vars && /bin/bash /userconfig/startBroker.sh"
     ports:

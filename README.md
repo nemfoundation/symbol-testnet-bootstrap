@@ -2,7 +2,7 @@
 
 Automated setup to deploy and manage Symbol testnet nodes.
 
-:warning: This is for supporting 0.9.3.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous version it is best if you start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
+:warning: This is for supporting 0.9.3.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous 9.2.x version it is best if you start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
 
 :warning: To clean up your environment if moving from a previous test network setup you can follow these steps
 
@@ -16,7 +16,7 @@ If you were running a peer node:
 4) Delete your image cache by running "docker system prune -a"  (confirm "y" if prompted)
 ```
 
-If you were running an api node:
+If you were running a api node:
 
 ```
 1) change to api-harvest-assembly directory
@@ -26,8 +26,9 @@ If you were running an api node:
 4) Delete your image cache by running "docker system prune -a"  (confirm "y" if prompted)
 ```
 
-:information_source: Over time as you upgrade to new versions old versions can take up space on disk. If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`. NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
+:information_source: If you were running a previous 0.9.3.x version and want to update you simply can fetch the latest tagged release you want to use, then stop/start your services and the latest should be picked up. NOTE: its safest to use the `-b` flag with docker on an update restart to ensure the latest is executed inside the container.
 
+:information_source: Over time as you upgrade to new versions old versions can take up space on disk. If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`. NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
 
 ## Environment requirements
 

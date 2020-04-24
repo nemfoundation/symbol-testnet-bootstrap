@@ -27,11 +27,3 @@ run_time_vars:
   targets:
   - api-node/userconfig/resources/config-node.properties
 
-- name: REST_GATEWAY_PRIVATE_KEY
-  source:
-    path: rest-gateway/config-input.yaml
-    key: rest-gateway-private-key
-    address_position: 1
-    key_type: private
-  targets:
-  - rest-gateway/userconfig/rest.json

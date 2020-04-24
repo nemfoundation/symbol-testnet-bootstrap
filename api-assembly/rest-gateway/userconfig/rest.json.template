@@ -1,7 +1,8 @@
 {
   "network": {
     "name": "publicTest",
-    "description": "catapult public test network"
+    "description": "catapult public test network",
+    "propertiesFilePath": "/api-node-config/config-network.properties"
   },
 
   "port": 3000,
@@ -9,7 +10,6 @@
     "allowedHosts": ["*"],
     "allowedMethods": ["GET", "POST", "PUT", "OPTIONS"]
   },
-  "clientPrivateKey": "REST_GATEWAY_PRIVATE_KEY",
   "extensions": [
     "accountLink",
     "aggregate",
@@ -35,7 +35,9 @@
   "apiNode": {
     "host": "api-node",
     "port": 7900,
-    "publicKey": "PUBLIC_KEY",
+    "tlsClientCertificatePath": "/api-node-config/cert/node.crt.pem",
+    "tlsClientKeyPath": "/api-node-config/cert/node.key.pem",
+    "tlsCaCertificatePath": "/api-node-config/cert/ca.cert.pem",
     "timeout": 1000
   },
 
@@ -48,6 +50,11 @@
       "monitorLoggingThrottle": 60000
     },
     "allowOptionalAddress": true
+  },
+
+  "throttling": {
+    "burst": 20,
+    "rate": 7
   },
 
   "logging": {
@@ -67,5 +74,6 @@
       "maxsize": 20971520,
       "maxFiles": 100
     }
-  }
+  },
+  "numBlocksTransactionFeeStats": 300
 }

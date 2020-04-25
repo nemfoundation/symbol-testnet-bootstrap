@@ -1,0 +1,14 @@
+version: '3'
+services:
+  spammer:
+    image: techbureau/catapult-tools-private:gcc-master-275877a503
+    environment:
+    - PRIVATE_KEY
+    - NUMBER_OF_ACCOUNTS
+    - TRANSACTIONS_PER_SECOND
+    command: bash -c "sleep infinity"
+#    entrypoint: /spammer/spammer.sh
+    stop_signal: SIGINT
+    volumes:
+    - ../peer-node/userconfig/resources:/userconfig/resources/
+    - ./scripts:/spammer/scripts

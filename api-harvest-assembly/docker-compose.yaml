@@ -6,90 +6,82 @@ networks:
       config:
         - subnet: 172.20.0.0/24
 services:
-  generate-raw-addresses:
-    image: techbureau/catapult-tools:gcc-0.9.3.1
-    command: bash -c "/bin-mount/generate-raw-addresses-if-needed 3 /addresses/raw-addresses.txt /addresses/addresses.yaml"
-    volumes:
-    - ./utilities/bin/bash:/bin-mount
-    - ./build/generated-addresses:/addresses:rw
+  update_configs:
+    build: ../common/ruby
+#    build:
+#      context: ../common/ruby
+#      dockerfile: Dockerfile-dev
+#    command: bash -c "sleep infinity"
+    command: bash -c "/usr/share/base/ruby/bin/update_config.rb api-node && touch /state/update_configs"
 
-  store-addresses:
-    build: utilities/dockerfiles/ruby-alpine
-    command: ash -c "/bin-mount/wait /addresses/raw-addresses.txt && /ruby/bin/store-addresses-if-needed.rb /addresses/raw-addresses.txt /addresses/addresses.yaml"
-    volumes:
-    - ./utilities/bin/ash:/bin-mount
-    - ./utilities/ruby:/ruby
-    - ./build/generated-addresses:/addresses:rw
+    environment:
+    - S3_PEERS_FILE=s3://symbol-testnet/testnet-0941-v1/peer-list/peers-p2p.json
 
-  update_vars:
-    build: utilities/dockerfiles/ruby-alpine
-#    command: ash -c "sleep 100000"
-    command: ash -c "/bin-mount/wait /addresses/addresses.yaml && /usr/share/base/ruby/bin/update_vars.rb && touch /state/update_vars"
     volumes:
-    - ./utilities/bin/ash:/bin-mount
-    - ./utilities/ruby:/usr/share/base/ruby
+    - ../common/ruby:/usr/share/base/ruby
     - ./runtime-vars:/usr/share/base/ruby/config
     - ./api-node:/usr/share/base/api-node
     - ./rest-gateway:/usr/share/base/rest-gateway
-    - ./build/generated-addresses:/addresses:rw
     - ./state:/state:rw
 
   ###### running services ###########
   api-node:
-    image: techbureau/catapult-server:gcc-0.9.3.1
+    image: techbureau/catapult-server:gcc-0.9.4.1
     ports:
     - 7900:7900
-#    command: bash -c "sleep 1000000"
-    command: bash -c "/bin-mount/wait /state/update_vars && /bin/bash /userconfig/startApiServer.sh"
+#    command: bash -c "sleep infinity"
+    command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/startApiServer.sh"
     stop_signal: SIGINT
+    restart: on-failure:2
     volumes:
-    - ./utilities/bin/bash:/bin-mount
+    - ../utilities/bin/bash:/bin-mount
     - ./api-node/userconfig:/userconfig/
     - ./data/api-node:/data:rw
     - ./state:/state:rw
     - ./data/debug:/usr/share/apport/apport:rw
 
   api-broker:
-    image: techbureau/catapult-server:gcc-0.9.3.1
-#    command: bash -c "sleep 1000000"
-    command: bash -c "/bin-mount/wait /state/update_vars && /bin/bash /userconfig/startBroker.sh"
+    image: techbureau/catapult-server:gcc-0.9.4.1
+#    command: bash -c "sleep infinity"
+    command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/runServerRecover.sh && /bin/bash /userconfig/startBroker.sh"
     ports:
     - 7902:7902
     stop_signal: SIGINT
+    restart: on-failure:2
     volumes:
-    - ./utilities/bin/bash:/bin-mount
+    - ../utilities/bin/bash:/bin-mount
     - ./api-node/userconfig:/userconfig/
     - ./data/api-node:/data:rw
     - ./state:/state:rw
     - ./data/debug:/usr/share/apport/apport:rw
 
   db:
-    image: mongo
+    image: mongo:4.2.6-bionic
     command: bash -c "mongod --dbpath=/dbdata --bind_ip=db"
     stop_signal: SIGINT
     volumes:
-    - ./utilities/bin/bash:/bin-mount
+    - ../utilities/bin/bash:/bin-mount
     - ./data/mongo:/dbdata:rw
 
   init-db:
-    image: mongo
+    image: mongo:4.2.6-bionic
     command:  bash -c "/bin/bash /userconfig/mongors.sh"
     volumes:
-    - ./utilities/bin/bash:/bin-mount
+    - ../utilities/bin/bash:/bin-mount
     - ./data/mongo:/dbdata:rw
     - ./mongo/configs/:/userconfig/:ro
     depends_on:
     - db
 
   rest-gateway:
-    image: nemfoundation/symbol-rest-beta:commit-5e7b499
-    command: ash -c "/bin-mount/wait /state/update_vars && npm start /userconfig/rest.json"
+    image: nemfoundation/symbol-rest-beta:commit-7366605
+    command: ash -c "/bin-mount/wait /state/update_configs && npm start /userconfig/rest.json"
     stop_signal: SIGINT
     ports:
     - "3000:3000"
     volumes:
     - ./rest-gateway/userconfig/:/userconfig/
-    - ./utilities/bin/ash:/bin-mount
+    - ../utilities/bin/ash:/bin-mount
     - ./state:/state:rw
     - ./data/rest-gateway:/logs:rw
     - ./api-node/userconfig/resources:/api-node-config/
@@ -98,4 +90,3 @@ services:
     networks:
       default:
         ipv4_address: 172.20.0.9
-

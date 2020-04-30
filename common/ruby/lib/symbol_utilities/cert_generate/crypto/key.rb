@@ -19,12 +19,21 @@ module SymbolUtilities
       #   openssl pkey -inform pem -in key.pem -text -noout
       #   openssl pkey -in key.pem -pubout -out pubkey.pem
       class Key < Top
-        def initialize(private_key_name: nil, public_key_name: nil)
-          generate_key_info!
+        def initialize(private_key_name: nil, public_key_name: nil, pem_file_path: nil)
+          if pem_file_path
+            # This means read from existing pem file
+            generate_key_pair!(pem_file_path)
+          else
+            generate_key_info!
+          end
           # generate_key_info! has to go first
           super(ret_file_name_content_hash(private_key_name, public_key_name))
         end
-        
+      
+        def self.read_ca_key_from_cert_dir(ca_key_full_path, private_key_name: nil, public_key_name: nil) 
+          new(pem_file_path: ca_key_full_path, private_key_name: private_key_name, public_key_name: public_key_name)
+        end
+
         attr_reader :pem, :public_pem, :private_key, :public_key
 
         private

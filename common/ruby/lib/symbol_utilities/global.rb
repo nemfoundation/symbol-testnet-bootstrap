@@ -39,7 +39,7 @@ module SymbolUtilities
       end
     end
 
-    MONGO_HOST                  = 'db'
+    MONGO_HOST    = 'db'
 
     PEER_HOSTNAME = 'peer-node'
     API_HOSTNAME  = 'api-node'

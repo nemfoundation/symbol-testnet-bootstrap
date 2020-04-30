@@ -19,12 +19,16 @@ module SymbolUtilities
       @num_nodes         = num_nodes
     end
 
-    def write_crypto_info_to_files
-      self.cert_generate.write_to_files
+    def self.generate(node_type, target_config_dir, num_nodes: 1)
+      new(node_type, target_config_dir, num_nodes: num_nodes).generate
     end
-
-    def component_keys
-      @component_keys ||= Keys::Component.new(self.keys_handle)
+    def generate
+      if self.crypto_info_exists?
+        RunTimeVars::CopyKey.run(self.node_type, self.component_keys, overwrite: true)
+      else
+        self.cert_generate.write_to_files
+        RunTimeVars::CopyKey.run(self.node_type, self.component_keys)
+      end
     end
 
     def component_indexes
@@ -42,17 +46,31 @@ module SymbolUtilities
 
     attr_reader :target_config_dir, :num_nodes
 
+    def crypto_info_exists?
+      if @crypto_info_exists.nil?
+        @crypto_info_exists = self.cert_generate.crypto_info_exists?
+      else
+        @crypto_info_exists
+      end
+    end
+
+    def component_keys
+      @component_keys ||= Keys::Component.new(self.keys_handle)
+    end
+
     def keys_handle
-      @keys_handle ||= Keys::Handle.new(self.node_type => self.cert_generate.indexed_keys)
+      @keys_handle ||= 
+        begin
+          indexed_keys = (self.crypto_info_exists? ? 
+                            self.cert_generate.indexed_keys_existing :
+                            self.cert_generate.indexed_keys_generated)
+          Keys::Handle.new(self.node_type => indexed_keys)
+        end
     end
 
     def cert_generate
       @cert_generate ||= CertGenerate.new(self)
     end
-    
-    private
-    
-    
-  end
+  end    
 end
 

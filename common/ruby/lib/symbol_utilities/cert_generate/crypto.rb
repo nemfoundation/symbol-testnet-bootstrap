@@ -16,9 +16,10 @@ module SymbolUtilities
     class Crypto
       require_relative('crypto/top')
       # top must go first
-      require_relative('crypto/key')
       require_relative('crypto/cert')
       require_relative('crypto/cnf_file')
+      require_relative('crypto/info')
+      require_relative('crypto/key')
       require_relative('crypto/request')
       require_relative('crypto/write_to_files')
       
@@ -26,15 +27,29 @@ module SymbolUtilities
         @parent = parent
       end
       
+      def crypto_info_exists?
+        # TODO: right now just one index. logic here if multiple indexs is to return true only if crypto_info_exists for all
+        # indexes
+        ! self.parent.component_indexes.find do |component_index|
+          ! ::File.file?(ca_key_full_path(component_index))
+        end
+      end
+      
       def write_to_files
-        self.indexed_info.each_pair do |component_index, info|
+        self.indexed_info_generated.each_pair do |component_index, info|
           cert_dir_full_path = self.parent.component_cert_dir_full_path(component_index)
           WriteToFiles.write_to_files(cert_dir_full_path, info)
         end
       end
       
-      def indexed_keys
-        @indexed_keys ||= self.indexed_info.inject({}) do |h, (component_index, info)|
+      def indexed_keys_generated
+        @indexed_keys_generated ||= self.indexed_info_generated.inject({}) do |h, (component_index, info)|
+          h.merge(component_index => info.ca_key)
+        end
+      end
+      
+      def indexed_keys_existing
+        @indexed_keys_existing ||= self.indexed_info_existing.inject({}) do |h, (component_index, info)|
           h.merge(component_index => info.ca_key)
         end
       end
@@ -42,34 +57,28 @@ module SymbolUtilities
       protected
       
       attr_reader :parent
-
+      
       # Indexed by component_index
-      def indexed_info
-        @indexed_info ||= self.indexed_cert_cnf_files.inject({}) do |h, (component_index, cert_cnf_files)|
-          h.merge(component_index => info_for_component_index(cert_cnf_files))
+      def indexed_info_generated
+        @indexed_info_generated ||= self.indexed_cert_cnf_files.inject({}) do |h, (component_index, cert_cnf_files)|
+          h.merge(component_index => Info::Generated.new(cert_cnf_files))
         end
       end 
-      
+
+      def indexed_info_existing
+        @indexed_info_existing ||= self.parent.component_indexes.inject({}) do |h, component_index|
+          h.merge(component_index => Info::Existing.new(ca_key_full_path(component_index)))
+        end
+      end 
+                  
       def indexed_cert_cnf_files
         @indexed_cert_cnf_files ||= self.parent.indexed_cert_cnf_files
       end
-      
+
       private
-      
-      InfoFields = [:ca_key, :ca_cert, :node_key, :node_request, :ca_cnf, :node_cnf]
-      Info = Struct.new(*InfoFields)
-      def info_for_component_index(cert_cnf_files)
-        ca_cnf_content   = cert_cnf_files[:ca_cnf].content
-        node_cnf_content = cert_cnf_files[:node_cnf].content
-        
-        ca_key           = Key.new(private_key_name: Global::CertInfo.private_key, public_key_name: Global::CertInfo.public_key)
-        ca_cert          = Cert.self_sign(ca_key, ca_cnf_content)
-        node_key         = Key.new(private_key_name: Global::CertInfo.node_private_key, public_key_name: Global::CertInfo.node_public_key)
-        node_request     = Request.new(node_key, node_cnf_content)
-        ca_cnf           = CnfFile.new(ca_cnf_content, Global::CertInfo.ca_cnf)
-        node_cnf         = CnfFile.new(node_cnf_content, Global::CertInfo.node_cnf)
-        
-        Info.new(ca_key, ca_cert, node_key, node_request, ca_cnf, node_cnf)
+
+      def ca_key_full_path(component_index)
+        "#{self.parent.component_cert_dir_full_path(component_index)}/#{Global::CertInfo.private_key}"
       end
       
     end

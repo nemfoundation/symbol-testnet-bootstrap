@@ -7,6 +7,7 @@ config-harvesting.properties
 config-node.properties
 config-user.properties
 rest.json
+data
 
 api-harvest-assembly/data/api-node/*
 api-harvest-assembly/data/rest-gateway/*

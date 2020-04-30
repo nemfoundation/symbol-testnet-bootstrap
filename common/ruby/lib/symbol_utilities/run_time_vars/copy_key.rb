@@ -1,21 +1,23 @@
 module SymbolUtilities
   class RunTimeVars
     class CopyKey < self
-      def self.run(node_type, component_keys)
-        super(node_type: node_type, component_keys: component_keys)
+      def self.run(node_type, component_keys, overwrite: false)
+        self.elements(component_keys: component_keys, node_type: node_type).each { |el| el.run(overwrite: overwrite) }
       end
 
-      def run
-        # dont replace existing values
-        unless self.component_config.value?
-          case self.component_config.type
-          when :copy_key
-            copy_key
-          when :friendly_name
-            set_friendly_name
-          else
-            fail "Illegal type '#{self.type}'"
-          end  
+      def run(overwrite: false)
+        # dont replace existing values unless overwrite is true and donot_overwrite is not true
+        unless self.component_config.donot_overwrite
+          if self.component_config.value?.nil? or overwrite
+            case self.component_config.type
+            when :copy_key
+              copy_key
+            when :friendly_name
+              set_friendly_name
+            else
+              fail "Illegal type '#{self.type}'"
+            end  
+          end
         end
       end
 

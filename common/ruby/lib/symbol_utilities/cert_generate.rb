@@ -19,9 +19,17 @@ module SymbolUtilities
     def initialize(parent)
       @parent = parent
     end
-    
-    def indexed_keys
-      self.crypto_info.indexed_keys
+
+    def crypto_info_exists?
+      self.crypto_info.crypto_info_exists?
+    end
+  
+    def indexed_keys_generated
+      self.crypto_info.indexed_keys_generated
+    end
+
+    def indexed_keys_existing
+      self.crypto_info.indexed_keys_existing
     end
     
     def write_to_files
@@ -47,6 +55,10 @@ module SymbolUtilities
     def component_cert_dir_full_path(component_index)
       "#{self.parent.config_dir_full_path(component_index)}/#{CERT_SUBDIR}"
     end
+
+    def component_indexes
+      @component_indexes ||= self.parent.component_indexes
+    end
     
     protected
     
@@ -54,10 +66,6 @@ module SymbolUtilities
     
     def type
       @type ||= self.parent.node_type
-    end
-    
-    def component_indexes
-      @component_indexes ||= self.parent.component_indexes
     end
     
     def crypto_info

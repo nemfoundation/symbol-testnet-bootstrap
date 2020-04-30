@@ -72,7 +72,7 @@ module SymbolUtilities
         end
 
         def write_base_files
-          Crypto::InfoFields.each do |field|
+          Crypto::Info::Generated::Fields.each do |field|
             self.info.send(field).file_name_content_hash.each_pair do | file_name, content | 
               write_file(content, file_name)
             end

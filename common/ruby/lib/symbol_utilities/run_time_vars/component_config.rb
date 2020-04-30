@@ -9,9 +9,10 @@ module SymbolUtilities
         @attribute_name   = source['key'] ||  fail("Missing source['key']")
         @type             = (source['type'] || DEFAULT_OPERATION_TYPE).to_sym
         @key_type         = (source['key_type'] || DEFAULT_KEY_TYPE).to_sym
+        @donot_overwrite  = (source['donot_overwrite'].nil? ? false : source['donot_overwrite'])
       end
  
-      attr_reader :path, :attribute_name, :type, :key_type
+      attr_reader :path, :attribute_name, :type, :key_type, :donot_overwrite
 
       def address_position?
         @address_position

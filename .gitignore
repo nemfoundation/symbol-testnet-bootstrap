@@ -9,16 +9,18 @@ config-user.properties
 rest.json
 data
 
+peer-assembly/peer-node/userconfig/resources/cert/
 api-harvest-assembly/data/api-node/*
+api-harvest-assembly/api-node/userconfig/resources/cert/
 api-harvest-assembly/data/rest-gateway/*
 api-harvest-assembly/data/debug/*
 api-harvest-assembly/data/mongo/*
 api-harvest-assembly/data/api-node/00000/hashes.dat
 api-assembly/data/rest-gateway/*
+api-assembly/api-node/userconfig/resources/cert/
 api-assembly/data/debug/*
 api-assembly/data/mongo/*
 api-assembly/data/api-node/*
 api-assembly/data/api-node/00000/hashes.dat
 *.bak
 *.tmp
-

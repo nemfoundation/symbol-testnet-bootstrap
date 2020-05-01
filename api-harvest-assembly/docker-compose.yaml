@@ -72,7 +72,7 @@ services:
     - db
 
   rest-gateway:
-    image: nemfoundation/symbol-rest-beta:commit-7366605
+    image: nemfoundation/symbol-rest-beta:commit-4e84322
     command: ash -c "/bin-mount/wait /state/update_configs && npm start /userconfig/rest.json"
     stop_signal: SIGINT
     ports:

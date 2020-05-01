@@ -53,7 +53,7 @@ module SymbolUtilities
     end
     
     def component_cert_dir_full_path(component_index)
-      "#{self.parent.config_dir_full_path(component_index)}/#{CERT_SUBDIR}"
+      "#{self.parent.identity_dir_full_path(component_index)}/#{CERT_SUBDIR}"
     end
 
     def component_indexes

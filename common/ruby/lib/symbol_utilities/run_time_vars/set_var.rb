@@ -1,7 +1,6 @@
 module SymbolUtilities
   class RunTimeVars
     class SetVar < self
-
       def self.run
         files_content = {}
         self.elements.each { |el| el.update_files_content!(files_content) }

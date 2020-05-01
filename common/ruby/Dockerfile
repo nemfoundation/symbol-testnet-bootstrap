@@ -1,6 +1,8 @@
 FROM techbureau/catapult-tools:gcc-0.9.4.1
 RUN apt update
-RUN apt install -y ruby ruby-dev make g++
+RUN apt install -y ruby
+# for debug
+RUN apt install -y ruby-dev make g++
 
 WORKDIR /usr/app
 

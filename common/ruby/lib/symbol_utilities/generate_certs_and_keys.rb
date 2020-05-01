@@ -13,21 +13,21 @@
 #    limitations under the License.
 module SymbolUtilities
   class GenerateCertsAndKeys
-    def initialize(node_type, target_config_dir, num_nodes: 1)
+    def initialize(node_type, num_nodes: 1)
       @node_type         = node_type.to_sym
-      @target_config_dir = target_config_dir
+      @identity_dir      = Directory.identity
       @num_nodes         = num_nodes
     end
 
-    def self.generate(node_type, target_config_dir, num_nodes: 1)
-      new(node_type, target_config_dir, num_nodes: num_nodes).generate
+    def self.generate(node_type, num_nodes: 1)
+      new(node_type, num_nodes: num_nodes).generate
     end
     def generate
       if self.crypto_info_exists?
-        RunTimeVars::CopyKey.run(self.node_type, self.component_keys, overwrite: true)
+        RunTimeVars::CopyKey.run(self.node_type, self.component_keys, identity_dir: self.identity_dir, overwrite: true)
       else
         self.cert_generate.write_to_files
-        RunTimeVars::CopyKey.run(self.node_type, self.component_keys)
+        RunTimeVars::CopyKey.run(self.node_type, self.component_keys, identity_dir: self.identity_dir)
       end
     end
 
@@ -37,14 +37,14 @@ module SymbolUtilities
 
     attr_reader :node_type
 
-    def config_dir_full_path(component_index)
-      fail "Currently not implemented: multiple peers of same type" unless component_index == 0
-      self.target_config_dir
+    def identity_dir_full_path(component_index)
+      fail "Currently not implemented: multiple components needing identities" unless component_index == 0
+      self.identity_dir
     end
 
     protected
 
-    attr_reader :target_config_dir, :num_nodes
+    attr_reader :identity_dir, :num_nodes
 
     def crypto_info_exists?
       if @crypto_info_exists.nil?

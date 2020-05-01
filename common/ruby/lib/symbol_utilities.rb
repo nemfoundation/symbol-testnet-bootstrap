@@ -9,6 +9,7 @@ module SymbolUtilities
   require_relative('symbol_utilities/aux')
   require_relative('symbol_utilities/cert_generate')
   require_relative('symbol_utilities/config_input')
+  require_relative('symbol_utilities/directory')
   require_relative('symbol_utilities/generate_certs_and_keys')
   require_relative('symbol_utilities/influxdb')
   require_relative('symbol_utilities/keys')

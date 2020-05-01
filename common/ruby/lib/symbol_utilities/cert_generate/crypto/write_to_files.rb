@@ -64,7 +64,7 @@ module SymbolUtilities
         private
 
         def remove_existing_cert_info
-          ::FileUtils.rm_rf self.cert_dir_full_path
+          ::FileUtils.rm_rf "#{self.cert_dir_full_path}/*"
         end
 
         def make_cert_dir

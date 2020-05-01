@@ -35,6 +35,8 @@ services:
     - ./data/api-node:/data:rw
     - ./state:/state:rw
     - ./data/debug:/usr/share/apport/apport:rw
+    depends_on:
+    - api-broker
 
   api-broker:
     image: techbureau/catapult-server:gcc-0.9.4.1

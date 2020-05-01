@@ -4,7 +4,7 @@ networks:
   default:
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 172.20.1.0/24
 services:
   update_configs:
     build: ../common/ruby
@@ -35,6 +35,8 @@ services:
     - ./data/api-node:/data:rw
     - ./state:/state:rw
     - ./data/debug:/usr/share/apport/apport:rw
+    depends_on:
+    - api-broker
 
   api-broker:
     image: techbureau/catapult-server:gcc-0.9.4.1
@@ -87,4 +89,4 @@ services:
     - init-db
     networks:
       default:
-        ipv4_address: 172.20.0.9
+        ipv4_address: 172.20.1.9

@@ -21,6 +21,7 @@ run_time_vars:
     key: friendly_name
     address_position: 0 
     key_type: public
+    donot_overwrite: true
   targets:
   - api-node/userconfig/resources/config-node.properties
 

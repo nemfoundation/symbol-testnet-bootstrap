@@ -46,8 +46,8 @@ maxTrackedNodes = 5'000
 batchVerificationRandomSource = /dev/urandom
 
 # all hosts are trusted when list is empty
-trustedHosts =  127.0.0.0, 172.20.0.9
-localNetworks = 127.0.0.1,  172.20.0.9
+trustedHosts =  127.0.0.0, 172.20.1.9
+localNetworks = 127.0.0.1,  172.20.1.9
 
 [localnode]
 

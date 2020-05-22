@@ -22,7 +22,7 @@ services:
 
   ###### running services ###########
   api-node:
-    image: techbureau/catapult-server-private:gcc-master-f7bcc919f1
+    image: techbureau/catapult-server:gcc-0.9.5.1
     ports:
     - 7900:7900
     command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/startApiServer.sh"
@@ -39,7 +39,7 @@ services:
     - api-broker
 
   api-broker:
-    image: techbureau/catapult-server-private:gcc-master-f7bcc919f1
+    image: techbureau/catapult-server:gcc-0.9.5.1
     command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/runServerRecover.sh && /bin/bash /userconfig/startBroker.sh"
     ports:
     - 7902:7902

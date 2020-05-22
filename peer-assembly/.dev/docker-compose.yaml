@@ -21,7 +21,7 @@ services:
   ###### running services ###########
 
   peer-node:
-    image: techbureau/catapult-server:gcc-0.9.4.1
+    image: techbureau/catapult-server:gcc-0.9.5.1
     ports:
     - 7900:7900
 #    command: bash -c "sleep infinity"

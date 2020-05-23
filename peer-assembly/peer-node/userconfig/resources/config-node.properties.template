@@ -1,8 +1,8 @@
 [node]
 
 port = 7900
-apiPort = 7901
-maxIncomingConnectionsPerIdentity = 3
+#maxIncomingConnectionsPerIdentity = 3
+maxIncomingConnectionsPerIdentity = 6
 
 enableAddressReuse = false
 enableSingleThreadPool = true
@@ -46,12 +46,13 @@ maxTrackedNodes = 5'000
 batchVerificationRandomSource = /dev/urandom
 
 # all hosts are trusted when list is empty
-trustedHosts = 
+# trustedHosts = 127.0.0.1
+trustedHosts =
 localNetworks = 127.0.0.1
 
 [localnode]
 
-host = 
+host =
 friendlyName = FRIENDLY_NAME
 version = 0
 roles = Peer
@@ -61,14 +62,16 @@ roles = Peer
 maxConnections = 10
 maxConnectionAge = 200
 maxConnectionBanAge = 20
-numConsecutiveFailuresBeforeBanning = 30
+#numConsecutiveFailuresBeforeBanning = 30
+numConsecutiveFailuresBeforeBanning = 3
 
 [incoming_connections]
 
 maxConnections = 512
 maxConnectionAge = 200
 maxConnectionBanAge = 20
-numConsecutiveFailuresBeforeBanning = 30
+#numConsecutiveFailuresBeforeBanning = 30
+numConsecutiveFailuresBeforeBanning = 3
 backlogSize = 512
 
 [banning]

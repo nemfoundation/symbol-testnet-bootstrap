@@ -5,7 +5,6 @@ peers-p2p.json
 config-input.yaml
 config-harvesting.properties
 config-node.properties
-config-user.properties
 rest.json
 data
 

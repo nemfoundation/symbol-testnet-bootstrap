@@ -1,8 +1,8 @@
-# symbol-testnet-bootstrap (server 0.9.4.x)
+# symbol-testnet-bootstrap (server 0.9.5.x)
 
 Automated setup to deploy and manage Symbol testnet nodes.
 
-:warning: This is for supporting 0.9.4.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous version you need to start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
+:warning: This is for supporting 0.9.5.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous version you need to start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
 
 :warning: To clean up your environment if moving from a previous test network setup you can follow these steps
 
@@ -28,7 +28,7 @@ If you were running an api node:
 
 :information_source: Over time as you upgrade to new versions old versions can take up space on disk. If you run into disk issues b/c of this you can delete all old versions by running `docker system prune -a` which will ask you to confirm `y/n`. NOTE: this will delete all cached docker images so if you are doing any development with other images it will delete those as well and you will have to re-download
 
-:warning: In version 0.9.4.1+ all peer and api nodes in the network have switched to using TLS for connection and communication. With this network nodes now use certifications for their identity which will provide the certificate for TLS as well as the key pair and public key identity. This bootstrap tool now has a `<root>/identity` folder that contains the certificate/key files.
+:warning: In versions 0.9.4.1+ all peer and api nodes in the network have switched to using TLS for connection and communication. With this network nodes now use certifications for their identity which will provide the certificate for TLS as well as the key pair and public key identity. This bootstrap tool now has a `<root>/identity` folder that contains the certificate/key files.
  
 
 ## Environment requirements

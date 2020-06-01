@@ -38,7 +38,7 @@ transactionDisruptorSize = 16384
 transactionElementTraceInterval = 10
 
 enableDispatcherAbortWhenFull = false
-enableDispatcherInputAuditing = true
+enableDispatcherInputAuditing = false
 
 maxCacheDatabaseWriteBatchSize = 5MB
 maxTrackedNodes = 5'000

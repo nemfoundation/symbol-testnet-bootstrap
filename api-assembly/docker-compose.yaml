@@ -72,7 +72,7 @@ services:
     - db
 
   rest-gateway:
-    image: techbureau/catapult-rest-server-nightly:commit-1aeac3f
+    image: symbolplatform/symbol-rest-nightly:commit-5eb7eac
     command: ash -c "/bin-mount/wait /state/update_configs && npm start /userconfig/rest.json"
     stop_signal: SIGINT
     ports:

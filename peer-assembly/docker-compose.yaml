@@ -5,7 +5,7 @@ services:
     build: ../common/ruby
     command: bash -c "/usr/app/bin/update_config.rb peer-node && touch /state/update_configs"
     environment:
-    - S3_PEERS_FILE=s3://symbol-testnet/testnet-0951-v1/peer-list/peers-p2p.json
+    - S3_PEERS_FILE=s3://symbol-testnet/testnet-0962-v1/peer-list/peers-p2p.json
 
     volumes:
     - ./runtime-vars:/usr/app/config

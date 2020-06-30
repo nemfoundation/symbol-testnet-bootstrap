@@ -53,8 +53,8 @@
   },
 
   "throttling": {
-    "burst": 20,
-    "rate": 7
+    "burst": 35,
+    "rate": 20
   },
 
   "logging": {

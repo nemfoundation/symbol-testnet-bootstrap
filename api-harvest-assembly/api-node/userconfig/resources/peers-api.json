@@ -2,9 +2,9 @@
   "_info": "this file contains a list of api_node peers",
   "knownPeers": [
     {
-      "publicKey": "00a83a4e32be390b6f4edfee51cde96f63999cecc31a5160c921a62401b2833b",
+      "publicKey": "c43aa91cb49cd9c64037da191d7168b8590f73c0c5f8fd616b9fa9b54a7c93ad",
       "endpoint": {
-        "host": "api-01.us-east-1.testnet-0951-v1.symboldev.network",
+        "host": "api-01.us-east-1.096x.symboldev.network",
         "port": 7900
       },
       "metadata": {
@@ -13,72 +13,16 @@
       }
     },
     {
-      "publicKey": "8b6dc129abe13d75755a8610ab1784d90088089c374fe1c5bfd430e6540abe8b",
+      "publicKey": "c494ddf77ddca66c0fb16fc8e7fea92cb4583ec4d5890a05992fc031387d3095",
       "endpoint": {
-        "host": "api-01.eu-west-1.testnet-0951-v1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-01-eu-west-1",
-        "roles": "Api"
-      }
-    },
-    {
-      "publicKey": "469dcc2294d0d82bf0fd6a3321618ca3115045f7296a780de84b355b2803ded1",
-      "endpoint": {
-        "host": "api-01.us-west-1.testnet-0951-v1.symboldev.network",
+        "host": "api-01.us-west-1.096x.symboldev.network",
         "port": 7900
       },
       "metadata": {
         "name": "api-01-us-west-1",
         "roles": "Api"
       }
-    },
-    {
-      "publicKey": "d05ff4cc426a7b35d0dbd8ebd185c5c2f323cc20e7fbc2042cab1cd313cef9cd",
-      "endpoint": {
-        "host": "api-01.ap-southeast-1.testnet-0951-v1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-01-ap-southeast-1",
-        "roles": "Api"
-      }
-    },
-    {
-      "publicKey": "d258411b4b738af69f275e9b2101fba8a6585a99ac1f8d56824d80a55dac8719",
-      "endpoint": {
-        "host": "api-01.us-west-2.testnet-0951-v1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-01-us-west-2",
-        "roles": "Api"
-      }
-    },
-    {
-      "publicKey": "a5acde3127c082aa976dfda88fc629c91983651ebd160ccdf5183b2494a8f607",
-      "endpoint": {
-        "host": "api-01.eu-central-1.testnet-0951-v1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-01-eu-central-1",
-        "roles": "Api"
-      }
-    },
-    {
-      "publicKey": "2ab1ce5f9983fe89d786f5d1bc65e0cd2bea63d899331a20ec9c912dcc4c5eb1",
-      "endpoint": {
-        "host": "api-01.ap-northeast-1.testnet-0951-v1.symboldev.network",
-        "port": 7900
-      },
-      "metadata": {
-        "name": "api-01-ap-northeast-1",
-        "roles": "Api"
-      }
     }
   ]
 }
-
 

@@ -1,8 +1,8 @@
-# symbol-testnet-bootstrap (server 0.9.5.x)
+# symbol-testnet-bootstrap (server 0.9.6.x)
 
 Automated setup to deploy and manage Symbol testnet nodes.
 
-:warning: This is for supporting 0.9.5.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous version you need to start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
+:warning: This is for supporting 0.9.6.x server versions of the Symbol test network deployments. If you have been running a node on ANY previous version you need to start from a fresh environment and redeploy your new node from a clean state. With new network setups as usual any account(s) you might have been using on the old network will have no balance if moving to a new network.
 
 :warning: To clean up your environment if moving from a previous test network setup you can follow these steps
 

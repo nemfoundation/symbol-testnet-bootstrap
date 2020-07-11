@@ -11,7 +11,7 @@ services:
     command: bash -c "/usr/app/bin/update_config.rb api-node && touch /state/update_configs"
 
     environment:
-    - S3_PEERS_FILE=s3://symbol-testnet/testnet-0951-v1/peer-list/peers-p2p.json
+    - S3_PEERS_FILE=s3://symbol-testnet/testnet-0963-v1/peer-list/peers-p2p.json
 
     volumes:
     - ./runtime-vars:/usr/app/config
@@ -22,7 +22,7 @@ services:
 
   ###### running services ###########
   api-node:
-    image: techbureau/catapult-server:gcc-0.9.5.1
+    image: techbureau/catapult-server:gcc-0.9.6.3
     ports:
     - 7900:7900
     command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/startApiServer.sh"
@@ -39,7 +39,7 @@ services:
     - api-broker
 
   api-broker:
-    image: techbureau/catapult-server:gcc-0.9.5.1
+    image: techbureau/catapult-server:gcc-0.9.6.3
     command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/runServerRecover.sh && /bin/bash /userconfig/startBroker.sh"
     ports:
     - 7902:7902
@@ -72,7 +72,7 @@ services:
     - db
 
   rest-gateway:
-    image: techbureau/catapult-rest-server-nightly:commit-1aeac3f
+    image: symbolplatform/symbol-rest-nightly:commit-5eb7eac
     command: ash -c "/bin-mount/wait /state/update_configs && npm start /userconfig/rest.json"
     stop_signal: SIGINT
     ports:

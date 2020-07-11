@@ -5,4 +5,4 @@ harvesterSigningPrivateKey = HARVESTER_PRIVATE_KEY
 enableAutoHarvesting = true
 maxUnlockedAccounts = 5
 delegatePrioritizationPolicy = Importance
-beneficiaryPublicKey = 0000000000000000000000000000000000000000000000000000000000000000 
+beneficiaryAddress =

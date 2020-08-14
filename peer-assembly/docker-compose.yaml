@@ -16,7 +16,7 @@ services:
   ###### running services ###########
 
   peer-node:
-    image: techbureau/catapult-server:gcc-0.9.6.3
+    image: symbolplatform/symbol-server:gcc-0.9.6.4
     ports:
     - 7900:7900
     command: bash -c "/bin-mount/wait /state/update_configs && /bin/bash /userconfig/runServerRecover.sh && /bin/bash /userconfig/startServer.sh"

@@ -7,7 +7,7 @@ if [ -e "/state/api-node-0-broker" ]; then
 fi
 
 cd /data
-rm /data/startup/datadir-initialized
+rm -f /data/startup/datadir-initialized
 
 touch /state/api-node-0-broker
 
